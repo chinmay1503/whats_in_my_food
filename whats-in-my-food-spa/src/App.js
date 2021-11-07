@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./Home";
 import FoodProduct from "./FoodProduct";
+import Compare from "./Compare";
  
 class Main extends Component {
     constructor(props) {
@@ -93,6 +94,7 @@ class Main extends Component {
         <div className="content">
             <Route exact path="/" component={Home}/>
             <Route path="/product/:productName" component={FoodProduct}/>
+            <Route path="/compare" component={Compare}/>
         </div>
         </HashRouter>
     );
