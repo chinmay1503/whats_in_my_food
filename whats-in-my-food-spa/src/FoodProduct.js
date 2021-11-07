@@ -83,7 +83,6 @@ class FoodProduct extends Component {
           var serving_size_g	= product.serving_size_g;
           var sodium_mg	= product.sodium_mg;
           var name	= product.name;
-          var potassium_mg	= product.potassium_mg;
           var fat_saturated_g	= product.fat_saturated_g;
           var fat_total_g	= product.fat_total_g;
           var calories	= product.calories;
@@ -100,16 +99,38 @@ class FoodProduct extends Component {
                   </div>
                   <div className = "stepsContainer">
                     <h2 className = "recipeText">Nutritional Statistics</h2>
-                    <ul>
-                      <li>Sugar :{`${sugar}`}</li>
-                      <li> Fiber :{`${fiber_g}`}</li>
-                      <li> Fat_Saturated :{`${fat_saturated_g}`}</li>
-                      <li> Fat_Total :{`${fat_total_g}`}</li>
-                      <li> Calories :{`${calories}`}</li>
-                    </ul>
-                    <table>
-                    <tr><th>Name</th></tr>
-                    </table>
+                    <table className="table">
+                      <thead className="table-dark">
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Serving Size</th>
+                          <th scope="col">Calories</th>
+                          <th scope="col">Total Fat</th>
+                          <th scope="col">Saturated Fat</th>
+                          <th scope="col">Cholosterol</th>
+                          <th scope="col">Sodium</th>
+                          <th scope="col">Carbohydrates</th>
+                          <th scope="col">Fiber</th>
+                          <th scope="col">Sugar</th>
+                          <th scope="col">Protein</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="table-light">
+                          <td>{name}</td>
+                          <td>{serving_size_g}g</td>
+                          <td>{calories}</td>
+                          <td>{fat_total_g}g</td>
+                          <td>{fat_saturated_g}g</td>
+                          <td>{cholesterol_mg}mg</td>
+                          <td>{sodium_mg}mg</td>
+                          <td>{carbohydrates_total_g}g</td>
+                          <td>{fiber_g}g</td>
+                          <td>{sugar}g</td>
+                          <td>{protein_g}g</td>
+                        </tr>
+                      </tbody>
+                  </table>
                   </div>
                 </div>
               </div>
