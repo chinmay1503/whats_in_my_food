@@ -83,12 +83,10 @@ a:focus {
 
 h1 {
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 48px !important;
+  font-size: 42px !important;
   color: rgb(58, 58, 58);
   font-weight: bold;
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 .burger {
