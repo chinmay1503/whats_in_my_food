@@ -150,6 +150,8 @@
   font-size: 27px;
   color: rgb(37, 37, 37);
   margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .ingredientContainerShow {
