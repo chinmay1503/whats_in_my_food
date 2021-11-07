@@ -101,12 +101,15 @@ class FoodProduct extends Component {
                   <div className = "stepsContainer">
                     <h2 className = "recipeText">Nutritional Statistics</h2>
                     <ul>
-                      <li>{`${sugar}`}</li>
-                      <li>{`${fiber_g}`}</li>
-                      <li>{`${fat_saturated_g}`}</li>
-                      <li>{`${fat_total_g}`}</li>
-                      <li>{`${calories}`}</li>
+                      <li>Sugar :{`${sugar}`}</li>
+                      <li> Fiber :{`${fiber_g}`}</li>
+                      <li> Fat_Saturated :{`${fat_saturated_g}`}</li>
+                      <li> Fat_Total :{`${fat_total_g}`}</li>
+                      <li> Calories :{`${calories}`}</li>
                     </ul>
+                    <table>
+                    <tr><th>Name</th></tr>
+                    </table>
                   </div>
                 </div>
               </div>
