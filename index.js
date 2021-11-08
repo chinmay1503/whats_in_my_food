@@ -65,7 +65,7 @@ app.get("/api/searchProductByName/:name", async (req, res) => {
     res.status(200).json({
       status: success,
       data: {},
-      message: "Name of recipe is Mandatory",
+      message: "Name of product is Mandatory",
     });
   } else {
     services

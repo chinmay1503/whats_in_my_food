@@ -290,3 +290,11 @@ h1 {
   -moz-box-shadow: 3px 3px 5px 6px #6e9ec1; /* Firefox 3.5 - 3.6 */
   box-shadow: 3px 3px 5px 6px #6e9ec1; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
+
+.contentContainer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 140px;
+  bottom: 0px;
+}

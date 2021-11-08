@@ -63,7 +63,7 @@ class Home extends Component {
     render(){
         return(
             <HashRouter>
-                <div className = "contentContainer">
+                <div className = "homeContainer">
                     <div className = "main_Quote_Container">
                         <img className = "main_quote" alt="Calorie_Weightage_Img" src = "/images/main_quote.png"/>
                     </div>

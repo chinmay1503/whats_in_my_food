@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from "react-router-dom";
 import { Animated, Easing } from 'react-native';
+import CalorieNinjaApi from "./services/CalorieNinjaApi";
 import FoodProductApi from "./services/FoodProductApi";
 import "./css/productStyles.css";
 
@@ -11,6 +12,8 @@ class FoodProduct extends Component {
       error: null,
       isLoaded: false,
       items: [],
+      productName: "",
+      productImgUrl: "",
       spinAnim: new Animated.Value(0)
     };
   }
@@ -26,18 +29,38 @@ class FoodProduct extends Component {
     }
   )).start();
     var prodName = this.props.match.params.productName;
+    this.getProductDetails(prodName)
     var api = "nutrition?query=" + prodName;
-    FoodProductApi.get(api).then(
+    CalorieNinjaApi.get(api).then(
       (result) => {
         this.setState({
           isLoaded: true,
-          items: result.data,
+          items: result.data
         });
       },
       (error) => {
         this.setState({
           isLoaded: true,
           error,
+        });
+      }
+    );
+  }
+
+  getProductDetails = (prodName) => {
+    FoodProductApi.get(`/api/searchProductByName/${prodName}`).then(
+      (result) => {
+        let product = result.data.data.products[0];
+        this.setState({
+          productName: product.food_name,
+          productImgUrl: product.image_url
+        });
+      },
+      (error) => {
+        console.log(error)
+        this.setState({
+          isLoaded: true,
+          error: error,
         });
       }
     );
@@ -82,7 +105,7 @@ class FoodProduct extends Component {
           var fiber_g	= product.fiber_g;
           var serving_size_g	= product.serving_size_g;
           var sodium_mg	= product.sodium_mg;
-          var name	= product.name;
+          var name	= this.state.productName;
           var fat_saturated_g	= product.fat_saturated_g;
           var fat_total_g	= product.fat_total_g;
           var calories	= product.calories;
@@ -91,14 +114,14 @@ class FoodProduct extends Component {
           var carbohydrates_total_g	= product.carbohydrates_total_g;
           return (
               <div className = "contentContainer">
-                <div className = "recipeContainer">
-                  <h1 className = "text-center">{product.name}</h1>
+                <div className = "productContainer">
+                  <h1 className = "text-center">{this.state.productName}</h1>
                   <div className = "divider"></div>
                   <div className = "photoHolder">
-                    <img className = "recipeImage" alt="productImage" src = {`${product.thumbnail}`}/>
+                    <img className = "productImage" alt="productImage" src = {`${this.state.productImgUrl}`}/>
                   </div>
                   <div className = "stepsContainer">
-                    <h2 className = "recipeText">Nutritional Statistics</h2>
+                    <h2 className = "productText">Nutritional Statistics</h2>
                     <table className="table">
                       <thead className="table-dark">
                         <tr>

@@ -4,37 +4,10 @@
   font-family: "Saira Extra Condensed", sans-serif;
 }
 
-.contentContainer {
+.homeContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.uploadRecipe {
-  text-decoration: underline;
-  color: rgb(37, 37, 37) !important;
-  text-align: center;
-  font-size: 28px;
-  text-align: center !important;
-  align-self: center !important;
-}
-
-.uploadRecipe:hover {
-  color: rgb(78, 78, 78) !important;
-  border-bottom: none !important;
-}
-
-.uploadRecipe:active {
-  color: rgb(128, 128, 128) !important;
-  border-bottom: none !important;
-}
-.uploadRecipe:focus {
-  color: rgb(37, 37, 37) !important;
-  border-bottom: none !important;
-}
-
-.uploadContainer {
-  text-align: center;
 }
 
 .containSearch {
