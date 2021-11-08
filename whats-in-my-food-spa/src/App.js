@@ -5,6 +5,7 @@ import {
     HashRouter
 } from "react-router-dom";
 import Home from "./Home";
+import Browse from "./Browse";
 import FoodProduct from "./FoodProduct";
 import Compare from "./Compare";
  
@@ -93,6 +94,7 @@ class Main extends Component {
         </nav>
         <div className="content">
             <Route exact path="/" component={Home}/>
+            <Route exact path="/browse" component={Browse}/>
             <Route path="/product/:productName" component={FoodProduct}/>
             <Route path="/compare" component={Compare}/>
         </div>
