@@ -28,31 +28,27 @@ export class Compare extends Component {
         return (
             <>
             <h1 className="heading" style={{textAlign:"center"}}>Compare Products</h1>
-            <div className="container">
+            <div className="compareContainer">
 
             
-             <span>Product 1:</span> <input
-             className="product" 
+             <span className="compareproductText">Product 1:</span> <input
+             className="productInput" 
              type="text"
              name="product1"
              value={this.state.product1}
             onChange={this.handleChange}
              />
-             <br/>
-             <h3>V/S</h3>
-             <br/>
-             <span>Product 2:</span> <input 
-             className="product"
+             <h3 className="versus">V/S</h3>
+             <span className="compareproductText">Product 2:</span> <input 
+             className="productInput"
              type="text"
              name="product2"
              value={this.state.product2}
             onChange={this.handleChange}
              />
-             <br/>
-             <br/>
              <input 
                 type="button"
-                className="btn btn-primary submit"
+                className="btn btn-primary compareSubmit"
                 value="Compare"
                 onClick={this.handleSubmit}
              />

@@ -110,44 +110,15 @@
   text-align: center;
   font-weight: bold;
 }
-.submit{
-  margin-left: 46%;
-  width: 10%;
-  margin-top: 1%;
-}
+
 .ingredientContainerShow {
   position: relative;
   height: auto !important;
 }
-.container{
-  margin-top: 5%;
-}
-.heading{
-  margin-bottom: -3%;
-  margin-top: 5%;
-  margin-left: 2%;
-}
-h3{
-  font-weight: bold;
-  margin-left: 50%;
-  margin-top: 3%;
-  font-size: 203%;
-}
-span{
-  margin-right: -31%;
-  margin-left: 30%;
-  margin-top: 3%;
-  font-weight: bold;
-  font-size: large;
-}
+
 .instructionsText {
   font-family: "Arvo", serif;
   color: rgb(37, 37, 37);
-}
-  .product {
-    margin-left: 35%;
-    width: 28%;
-    height: 28%;
 }
 
 .widgetContainer {

@@ -1,0 +1,42 @@
+.productInput {
+  margin-left: 35%;
+  width: 28%;
+  height: 34px;
+  border: 1 px solid #ccc;
+  border-radius: 4px;
+}
+
+.compareSubmit {
+  margin-left: 46%;
+  width: 12%;
+  margin-top: 3%;
+}
+
+.compareContainer {
+  margin-top: 5%;
+}
+
+.heading {
+  margin-bottom: -3%;
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+.versus {
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: bold;
+  margin-left: 50%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 3.75rem;
+}
+
+.compareproductText {
+  margin-right: -31%;
+  margin-left: 30%;
+  margin-top: 3%;
+  font-weight: bold;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 27px;
+  color: rgb(37, 37, 37);
+}
