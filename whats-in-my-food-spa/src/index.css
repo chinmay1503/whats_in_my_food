@@ -197,7 +197,7 @@ h1 {
     text-align: center;
     font-size: 25px;
     height: 47px;
-    top: 15vh;
+    top: 12vh;
     width: 60%;
     animation: 0.5s homeLinkFade;
   }
@@ -208,7 +208,7 @@ h1 {
     right: 10px;
     font-size: 25px;
     height: 47px;
-    top: 28vh;
+    top: 18vh;
     width: 60%;
     z-index: 20000;
     animation: 0.5s browseLinkFade;
@@ -246,7 +246,7 @@ h1 {
     text-align: center;
     font-size: 25px;
     height: 47px;
-    top: 15vh;
+    top: 25vh;
     width: 60%;
     animation: 0.5s homeLinkFade;
   }
@@ -257,7 +257,7 @@ h1 {
     right: 10px;
     font-size: 25px;
     height: 47px;
-    top: 28vh;
+    top: 36vh;
     width: 60%;
     z-index: 20000;
     animation: 0.5s browseLinkFade;
