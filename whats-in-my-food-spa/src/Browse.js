@@ -122,7 +122,7 @@ class Browse extends Component {
               </div>
               <div className="product-List">
                 <div>
-                  <h1> Browse All Food Products </h1>
+                  <h1 className="browseHeaderText"> Browse All Food Products </h1>
                   <div className = "mainSearchContainer">
 
                     {Object.entries(this.state.items.data.products).map((item) => {

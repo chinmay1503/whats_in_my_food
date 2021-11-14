@@ -5,7 +5,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
+.browseHeaderText {
   font-family: "SAIRA EXTRA CONDENSED";
   font-size: 40px;
   color: rgb(37, 37, 37);
@@ -226,7 +226,7 @@ h1 {
     margin-right: 2%;
   }
 
-  h1 {
+  .browseHeaderText {
     margin-top: 100px;
   }
 }

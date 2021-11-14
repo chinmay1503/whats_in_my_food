@@ -65,9 +65,8 @@ class Home extends Component {
             <HashRouter>
                 <div className = "homeContainer">
                     <div className = "main_Quote_Container">
-                        <img className = "main_quote" alt="Calorie_Weightage_Img" src = "/images/main_quote.png"/>
-                    </div>
-                    <div className="mainContainer">
+                        <div className="imageDiv"><img className = "main_quote" alt="Calorie_Weightage_Img" src = "/images/main_quote.png"/></div>
+                        <div className="mainContainer">
                         <h1>Search For a Food product</h1>
                         <div className = "containSearch">
                             <div className = "searchContainer">
@@ -77,6 +76,7 @@ class Home extends Component {
                                 </button>                
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </HashRouter>
