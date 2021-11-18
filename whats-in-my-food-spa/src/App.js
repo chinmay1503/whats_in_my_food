@@ -8,6 +8,7 @@ import Home from "./Home";
 import Browse from "./Browse";
 import FoodProduct from "./FoodProduct";
 import Compare from "./Compare";
+import CompareFoodProduct from "./CompareFoodProduct";
  
 class Main extends Component {
     constructor(props) {
@@ -97,6 +98,7 @@ class Main extends Component {
             <Route exact path="/browse" component={Browse}/>
             <Route path="/product/:productName" component={FoodProduct}/>
             <Route path="/compare" component={Compare}/>
+            <Route path="/compareProducts/:product1/:product2" component={CompareFoodProduct}/>
         </div>
         </HashRouter>
     );

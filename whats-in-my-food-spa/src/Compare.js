@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import {
+    NavLink,
+    HashRouter,
+    
+} from "react-router-dom";
 import "../src/css/productStyles.css"
 export class Compare extends Component {
     constructor(props){
@@ -17,7 +22,6 @@ export class Compare extends Component {
         });
     }
     handleSubmit(e){
-        e.preventDefault();
         console.log("Product1 value",this.state.product1);
         console.log("Product2 value",this.state.product2);
     }
@@ -26,7 +30,7 @@ export class Compare extends Component {
 
        
         return (
-            <>
+            <HashRouter>
             <h1 className="heading" style={{textAlign:"center"}}>Compare Products</h1>
             <div className="compareContainer">
 
@@ -46,15 +50,12 @@ export class Compare extends Component {
              value={this.state.product2}
             onChange={this.handleChange}
              />
-             <input 
-                type="button"
-                className="btn btn-primary compareSubmit"
-                value="Compare"
-                onClick={this.handleSubmit}
-             />
+             <button className="btn btn-primary compareSubmit" value="Compare" onClick={this.handleSubmit}>
+                <NavLink className="compareLink" to={`/compareProducts/${this.state.product1}/${this.state.product2}`}>Compare</NavLink>
+            </button>
              
             </div>
-            </>
+            </HashRouter>
         )
     }
 }
