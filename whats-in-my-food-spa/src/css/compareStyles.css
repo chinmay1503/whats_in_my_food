@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Bangers|Boogaloo&display=swap");
+
 .productInput {
   margin-left: 35%;
   width: 28%;
@@ -50,20 +52,100 @@ a {
   font-family: "Saira Extra Condensed", sans-serif;
   font-size: 30px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
 }
 
 a:hover {
-  color: rgb(255, 255, 255);
   border-bottom: none;
 }
 
 a:active {
-  color: rgb(255, 255, 255);
   border-bottom: none;
 }
 
 a:focus {
-  color: rgb(255, 255, 255);
   border-bottom: none;
+}
+
+.photoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.compare.photoHolder {
+  width: 100%;
+}
+
+.versus.compare {
+  margin: auto;
+  font-family: 'Bangers';
+}
+
+
+/* Compare Stats Css */ 
+
+@keyframes expandBar {
+  from { width: 0; } to { width:var(--bar-value); }
+}
+
+.stat-bars-label p{
+  margin: 0%;
+  font-family: "Arvo", sans-serif;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.comparison-bar1 {
+  width: var(--bar-value);
+  background-color: #F2726F;
+  color: rgb(0, 0, 0);
+  animation-name: expandBar;
+  animation-duration: 1s;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-family: "Arvo", sans-serif;
+}
+
+.comparison-bar2 {
+  width: var(--bar-value);
+  background-color: #5D62B5;
+  color: rgb(0, 0, 0);
+  animation-name: expandBar;
+  animation-duration: 1s;
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-family: "Arvo", sans-serif;
+}
+
+#Comparison-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 15px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.comparisonHeader {
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 1.5em;
+  color: rgb(37, 37, 37);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stat-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start; 
+  width: 50%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 5%;
 }

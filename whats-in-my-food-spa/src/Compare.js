@@ -5,6 +5,7 @@ import {
     
 } from "react-router-dom";
 import "../src/css/productStyles.css"
+import "./css/compareStyles.css";
 export class Compare extends Component {
     constructor(props){
         super(props);

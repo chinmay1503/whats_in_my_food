@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './css/homeStyles.css'
 import './css/browseStyles.css'
-import './css/compareStyles.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

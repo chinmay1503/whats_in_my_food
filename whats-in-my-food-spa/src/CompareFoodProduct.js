@@ -4,6 +4,7 @@ import { Animated, Easing } from 'react-native';
 import CalorieNinjaApi from "./services/CalorieNinjaApi";
 import FoodProductApi from "./services/FoodProductApi";
 import "./css/productStyles.css";
+import "./css/compareStyles.css";
 
 class CompareFoodProduct extends Component {
   constructor(props) {
@@ -135,26 +136,95 @@ class CompareFoodProduct extends Component {
       {
         if (Array.isArray(items) && items.length == 2 && items[0]["product1"] && items[1]["product2"])
         {
-          var product1 = items[0]["product1"];
-          var product2 = items[1]["product2"];
+          let product1 = items[0]["product1"];
+          let product2 = items[1]["product2"];
+
+          
           return (
-              <div className = "contentContainer">
-                <div className = "productContainer">
-                  <h1 className = "text-center">{this.state.product1_Name}</h1>
-                  <div className = "divider"></div>
-                  <div className = "photoHolder">
-                    <img className = "productImage" alt="productImage" src = {`${this.state.product1_ImgUrl}`}/>
+            <div className="contentContainer">
+              <div className="productContainer">
+                <div className="photoContainer">
+                  <div className="product1Container">
+                    <h1 className="text-center">{this.state.product1_Name}</h1>
+                    <div className="divider"></div>
+                    <div className="compare photoHolder">
+                      <img
+                        className="productImage"
+                        alt="productImage"
+                        src={`${this.state.product1_ImgUrl}`}
+                      />
+                    </div>
                   </div>
-                  <h3 className="versus">V/S</h3>
-                  <h1 className = "text-center">{this.state.product2_Name}</h1>
-                  <div className = "photoHolder">
-                    <img className = "productImage" alt="productImage" src = {`${this.state.product2_ImgUrl}`}/>
+                  <h3 className="versus compare">V/S</h3>
+                  <div className="product2Container">
+                    <h1 className="text-center">{this.state.product2_Name}</h1>
+                    <div className="compare photoHolder">
+                      <img
+                        className="productImage"
+                        alt="productImage"
+                        src={`${this.state.product2_ImgUrl}`}
+                      />
+                    </div>
                   </div>
-                  <div className = "stepsContainer">
-                    <h2 className = "productText">Nutritional Statistics</h2>
+                </div>
+                <div className="statsContainer">
+                  <p className="comparisonHeader">Comparison Statistics</p>
+                  <div id="Comparison-card">
+                    <div id="Comparison-statbars" className="stat-bars">
+                      <div className="stat-bars-label">
+                        <p>Calories</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.calories}%`}}> {product1.calories} </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.calories}%`}}> {product2.calories} </div>
+                      </div>
+                      <div className="stat-bars-label">
+                        <p>Fat</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.fat_total_g}%`}}> {product1.fat_total_g}g </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.fat_total_g}%`}}> {product2.fat_total_g}g </div>
+                      </div>
+                      <div className="stat-bars-label">
+                        <p>Sugar</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.sugar_g}%`}}> {product1.sugar_g}g </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.sugar_g}%`}}> {product2.sugar_g}g </div>
+                      </div>
+                      <div className="stat-bars-label">
+                        <p>Protein</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.protein_g}%`}}> {product1.protein_g}g </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.protein_g}%`}}> {product2.protein_g}g </div>
+                      </div>
+                      <div className="stat-bars-label">
+                        <p>Carbohydrates</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.carbohydrates_total_g}%`}}> {product1.carbohydrates_total_g}g </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.carbohydrates_total_g}%`}}> {product2.carbohydrates_total_g}g </div>
+                      </div>
+                      <div className="stat-bars-label">
+                        <p>Fiber</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.fiber_g}%`}}> {product1.fiber_g}g </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.fiber_g}%`}}> {product2.fiber_g}g </div>
+                      </div>
+                      <div className="stat-bars-label">
+                        <p>Cholesterol</p>
+                      </div>
+                      <div id="hp-bars" className="stat-bars">
+                        <div className="comparison-bar1" style={{"--bar-value":`${product1.cholesterol_mg}%`}}> {product1.cholesterol_mg}mg </div>
+                        <div className="comparison-bar2" style={{"--bar-value":`${product2.cholesterol_mg}%`}}> {product2.cholesterol_mg}mg </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
           );
         } else {
           return <div class = "text-center errorMessage">Error: No Such Food Product Found</div>;

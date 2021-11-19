@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {NavLink} from "react-router-dom";
 import { Animated, Easing } from 'react-native';
 import CalorieNinjaApi from "./services/CalorieNinjaApi";
 import FoodProductApi from "./services/FoodProductApi";
@@ -114,51 +113,54 @@ class FoodProduct extends Component {
           var protein_g	= product.protein_g;
           var carbohydrates_total_g	= product.carbohydrates_total_g;
           return (
-              <div className = "contentContainer">
-                <div className = "productContainer">
-                  <h1 className = "text-center">{this.state.productName}</h1>
-                  <div className = "divider"></div>
-                  <div className = "photoHolder">
-                    <img className = "productImage" alt="productImage" src = {`${this.state.productImgUrl}`}/>
-                  </div>
-                  <div className = "stepsContainer">
-                    <h2 className = "productText">Nutritional Statistics</h2>
-                    <table className="table">
-                      <thead className="table-dark">
-                        <tr>
-                          <th scope="col">Name</th>
-                          <th scope="col">Serving Size</th>
-                          <th scope="col">Calories</th>
-                          <th scope="col">Total Fat</th>
-                          <th scope="col">Saturated Fat</th>
-                          <th scope="col">Cholosterol</th>
-                          <th scope="col">Sodium</th>
-                          <th scope="col">Carbohydrates</th>
-                          <th scope="col">Fiber</th>
-                          <th scope="col">Sugar</th>
-                          <th scope="col">Protein</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="table-light">
-                          <td>{name}</td>
-                          <td>{serving_size_g}g</td>
-                          <td>{calories}</td>
-                          <td>{fat_total_g}g</td>
-                          <td>{fat_saturated_g}g</td>
-                          <td>{cholesterol_mg}mg</td>
-                          <td>{sodium_mg}mg</td>
-                          <td>{carbohydrates_total_g}g</td>
-                          <td>{fiber_g}g</td>
-                          <td>{sugar}g</td>
-                          <td>{protein_g}g</td>
-                        </tr>
-                      </tbody>
+            <div className="contentContainer">
+              <div className="productContainer">
+                <h1 className="text-center">{this.state.productName}</h1>
+                <div className="divider"></div>
+                <div className="photoHolder">
+                  <img
+                    className="productImage"
+                    alt="productImage"
+                    src={`${this.state.productImgUrl}`}
+                  />
+                </div>
+                <div className="statsContainer">
+                  <h2 className="productText">Nutritional Statistics</h2>
+                  <table className="table">
+                    <thead className="table-dark">
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Serving Size</th>
+                        <th scope="col">Calories</th>
+                        <th scope="col">Total Fat</th>
+                        <th scope="col">Saturated Fat</th>
+                        <th scope="col">Cholosterol</th>
+                        <th scope="col">Sodium</th>
+                        <th scope="col">Carbohydrates</th>
+                        <th scope="col">Fiber</th>
+                        <th scope="col">Sugar</th>
+                        <th scope="col">Protein</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="table-light">
+                        <td>{name}</td>
+                        <td>{serving_size_g}g</td>
+                        <td>{calories}</td>
+                        <td>{fat_total_g}g</td>
+                        <td>{fat_saturated_g}g</td>
+                        <td>{cholesterol_mg}mg</td>
+                        <td>{sodium_mg}mg</td>
+                        <td>{carbohydrates_total_g}g</td>
+                        <td>{fiber_g}g</td>
+                        <td>{sugar}g</td>
+                        <td>{protein_g}g</td>
+                      </tr>
+                    </tbody>
                   </table>
-                  </div>
                 </div>
               </div>
-            
+            </div>
           );
         } else {
           return <div class = "text-center errorMessage">Error: No Such Food Product Found</div>;
