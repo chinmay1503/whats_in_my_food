@@ -71,6 +71,8 @@ app.get("/api/searchProductByName/:name", async (req, res) => {
     services
       .searchProductByName(name)
       .then((result) => {
+       
+        console.log("Backend data",result.length);
         res.status(200).json({
           status: "success",
           data: {

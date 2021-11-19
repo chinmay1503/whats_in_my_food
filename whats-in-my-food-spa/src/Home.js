@@ -4,7 +4,7 @@ import {
     HashRouter,
     
 } from "react-router-dom";
-
+import FoodProductApi from "./services/FoodProductApi";
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -14,11 +14,31 @@ class Home extends Component {
         this.state = {
           searchTerm: "",
           placeholder: "Search for a Food Product...",
-          navClass: "navLink"
+          navClass: "navLink",
+          products:[]
         };
         
       }
-
+      componentDidMount(){
+        console.log("Hi");
+        FoodProductApi.get("/api/listAllProductNames/1").then(
+            (result) => {
+        
+              this.setState({
+                isLoaded: true,
+                products:result.data.data.products
+              });
+            },
+            (error) => {
+              console.log(error)
+              this.setState({
+                isLoaded: true,
+                error: error,
+              });
+            }
+          );
+          
+      }
     setTerm(event) {
         if (event.target.value !== "")
         {
@@ -36,8 +56,12 @@ class Home extends Component {
     {
         if (event.key === 'Enter') 
         {
-            
-            if (this.state.searchTerm !== "")
+            console.log("Products list:",this.state.products);
+            let flag=this.state.products.filter((r)=>r.food_name!==this.state.searchTerm);
+            if(this.state.searchTerm!==""&&this.state.products.length>0&&flag){
+                alert("Search product not found");
+            }
+            else if (this.state.searchTerm !== "")
             {
                 document.getElementById("submit").click();
             }
