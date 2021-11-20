@@ -14,7 +14,6 @@ class Home extends Component {
         super(props);
         this.setTerm = this.setTerm.bind(this);
         this.onKeyDown = this.onKeyDown.bind(this);
-        this.onClick = this.onClick.bind(this);
         this.state = {
           searchTerm: "",
           placeholder: "Search for a Food Product...",
@@ -67,7 +66,11 @@ class Home extends Component {
     {
         if (event.key === 'Enter') 
         {
-            if(!this.isProductPresentInDb()) {
+            if (this.state.searchTerm === "")
+            {
+                this.setState({placeholder: "Please enter a valid Food Product"});
+            }
+            else if(!this.isProductPresentInDb()) {
                 ToastNotification.showErrorMessage("bottom-center", "Product Not present in Database, Please search for a different Product");
             }
             else if(this.isProductPresentInDb()){
@@ -89,16 +92,14 @@ class Home extends Component {
         }
     }
 
-    onClick(event) 
-    {
+   
+    handleClickEvent=(e)=>{
+        e.preventDefault();
         if (this.state.searchTerm === "")
         {
             this.setState({placeholder: "Please enter a valid Food Product"});
         }
-    }
-    handleClickEvent=(e)=>{
-        e.preventDefault();
-        if(!this.isProductPresentInDb()){
+        else if(!this.isProductPresentInDb()){
             ToastNotification.showErrorMessage("bottom-center", "Product Not present in Database, Please search for a different Product");
         }else if(this.isProductPresentInDb()){
             this.props.history.push("/product/"+this.state.searchTerm);
