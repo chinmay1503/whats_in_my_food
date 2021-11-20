@@ -5,6 +5,10 @@ import {
     
 } from "react-router-dom";
 import FoodProductApi from "./services/FoodProductApi";
+import ToastNotification from "./services/ToastNotification";
+import { ToastContainer, toast } from 'material-react-toastify';
+import 'material-react-toastify/dist/ReactToastify.css';
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -19,11 +23,9 @@ class Home extends Component {
         };
         
       }
-      componentDidMount(){
-        console.log("Hi");
+      componentDidMount() {
         FoodProductApi.get("/api/listAllProductNames/1").then(
             (result) => {
-        
               this.setState({
                 isLoaded: true,
                 products:result.data.data.products
@@ -37,8 +39,17 @@ class Home extends Component {
               });
             }
           );
-          
       }
+
+    isProductPresentInDb() {
+        let isValid = false;
+        if (this.state.searchTerm !== "" && this.state.products.length > 0) {
+            let products = this.state.products.filter((product)=>product.food_name.trim().toUpperCase() === this.state.searchTerm.trim().toUpperCase());
+            return products.length > 0 ? true : false;
+        }
+        return isValid;
+    }
+      
     setTerm(event) {
         if (event.target.value !== "")
         {
@@ -56,10 +67,8 @@ class Home extends Component {
     {
         if (event.key === 'Enter') 
         {
-            console.log("Products list:",this.state.products);
-            let flag=this.state.products.filter((r)=>r.food_name!==this.state.searchTerm);
-            if(this.state.searchTerm!==""&&this.state.products.length>0&&flag){
-                alert("Search product not found");
+            if(!this.isProductPresentInDb()) {
+                ToastNotification.showErrorMessage("bottom-center", "Product Not present in Database, Please search for a different Product");
             }
             else if (this.state.searchTerm !== "")
             {
@@ -84,9 +93,10 @@ class Home extends Component {
     }
     
     
-    render(){
+    render() {
         return(
             <HashRouter>
+            <ToastContainer/>
                 <div className = "homeContainer">
                     <div className = "main_Quote_Container">
                         <div className="imageDiv"><img className = "main_quote" alt="Calorie_Weightage_Img" src = "/images/main_quote.png"/></div>
@@ -95,8 +105,8 @@ class Home extends Component {
                         <div className = "containSearch">
                             <div className = "searchContainer">
                                 <input onKeyDown={this.onKeyDown} className = "searchBox shadow" type="text" onChange={this.setTerm} placeholder= {this.state.placeholder}/>
-                                <button  className = "searchButton" onClick = {this.onClick}>
-                                    <NavLink id = "submit" className = {this.state.navClass} to={`/product/${this.state.searchTerm}`}><img className = "searchIcon" alt="SearchIcon" src = "/images/searchIcon.png"/></NavLink> 
+                                <button  id = "submit" className = "searchButton" onClick = {this.onClick}>
+                                    <NavLink className = {this.state.navClass} to={`/product/${this.state.searchTerm}`}><img className = "searchIcon" alt="SearchIcon" src = "/images/searchIcon.png"/></NavLink> 
                                 </button>                
                             </div>
                         </div>
