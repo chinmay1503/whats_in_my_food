@@ -70,6 +70,11 @@ class Home extends Component {
             if(!this.isProductPresentInDb()) {
                 ToastNotification.showErrorMessage("bottom-center", "Product Not present in Database, Please search for a different Product");
             }
+            else if(this.isProductPresentInDb()){
+                console.log("Histroy object");
+                this.props.history.push(`/product/${this.state.searchTerm}`);
+            }
+
             else if (this.state.searchTerm !== "")
             {
                 document.getElementById("submit").click();
@@ -91,9 +96,20 @@ class Home extends Component {
             this.setState({placeholder: "Please enter a valid Food Product"});
         }
     }
-    
+    handleClickEvent=(e)=>{
+        e.preventDefault();
+        if(!this.isProductPresentInDb()){
+            ToastNotification.showErrorMessage("bottom-center", "Product Not present in Database, Please search for a different Product");
+        }else if(this.isProductPresentInDb()){
+            this.props.history.push("/product/"+this.state.searchTerm);
+
+        }
+    }
     
     render() {
+        
+
+
         return(
             <HashRouter>
             <ToastContainer/>
@@ -105,8 +121,8 @@ class Home extends Component {
                         <div className = "containSearch">
                             <div className = "searchContainer">
                                 <input onKeyDown={this.onKeyDown} className = "searchBox shadow" type="text" onChange={this.setTerm} placeholder= {this.state.placeholder}/>
-                                <button  id = "submit" className = "searchButton" onClick = {this.onClick}>
-                                    <NavLink className = {this.state.navClass} to={`/product/${this.state.searchTerm}`}><img className = "searchIcon" alt="SearchIcon" src = "/images/searchIcon.png"/></NavLink> 
+                                <button  id = "submit" className = "searchButton" onClick = {this.handleClickEvent}>
+                                <img className = "searchIcon" alt="SearchIcon" src = "/images/searchIcon.png"/>
                                 </button>                
                             </div>
                         </div>
