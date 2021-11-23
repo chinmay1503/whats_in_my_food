@@ -7,7 +7,9 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
+    "d3": "^4.13.0",
     "material-react-toastify": "^1.0.1",
+    "queue": "^6.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-native": "^0.66.2",
@@ -16,6 +18,8 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "topojson": "^3.0.2",
+    "topojson-client": "^3.1.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -41,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "resize-observer-polyfill": "^1.5.1"
   }
 }

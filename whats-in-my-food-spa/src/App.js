@@ -9,7 +9,7 @@ import Browse from "./Browse";
 import FoodProduct from "./FoodProduct";
 import Compare from "./Compare";
 import CompareFoodProduct from "./CompareFoodProduct";
- 
+import CalorieWorld from "./CalorieWorld";
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -98,6 +98,7 @@ class Main extends Component {
             <Route exact path="/browse" component={Browse}/>
             <Route path="/product/:productName" component={FoodProduct}/>
             <Route path="/compare" component={Compare}/>
+            <Route path="/calorie_world" component={CalorieWorld}/>
             <Route path="/compareProducts/:product1/:product2" component={CompareFoodProduct}/>
         </div>
         </HashRouter>
