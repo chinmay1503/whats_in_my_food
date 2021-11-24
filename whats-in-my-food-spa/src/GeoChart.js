@@ -7,8 +7,8 @@ export default class GeoChart extends Component {
    
     return (
       <div>
-        <h1> Welcome to GeoChart of year :{this.props.year}</h1>
-        <Map data={data} year={this.props.year}/>
+        <h1> Welcome to Calorie Map </h1>
+        <Map data={data}/>
       </div>
     )
   }

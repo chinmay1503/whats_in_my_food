@@ -2,7 +2,7 @@ import React,{useRef,useEffect,useState} from 'react'
 import { select,geoPath,geoMercator ,min,max,scaleLinear} from 'd3'
 import useResizeObserver from './useResizeObserver'
 import './map.css'
-const Map = ({data,year}) => {
+const Map = ({data}) => {
     const svgRef = useRef();
     const wrapperRef = useRef();
     const dimensions = useResizeObserver(wrapperRef);
@@ -45,7 +45,7 @@ const Map = ({data,year}) => {
         .attr("x",10)
         .attr("y",25)
   
-    },[data,dimensions,year,country])
+    },[data,dimensions,country])
   
     return (
       <div ref={wrapperRef} style={{ marginBottom: "2rem" }}>
