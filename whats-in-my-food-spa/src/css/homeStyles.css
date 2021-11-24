@@ -15,12 +15,12 @@
 }
 
 .main_Quote_Container {
-  margin: auto
+  margin: auto;
 }
 
 .imageDiv {
-  text-align:center;
-  padding:20px;
+  text-align: center;
+  padding: 20px;
 }
 
 .main_quote {
@@ -98,26 +98,33 @@
     width: 80%;
     left: 10%;
   }
-  nav{
+
+  nav {
     display: flex;
     justify-content: space-around;
     min-height: 135px;
   }
-.searchBox {
-  position: absolute;
-  margin-top: 5%;
-  width: 93%;
-  height: 65%;
-  border-radius: 15px;
-  border: none;
-  text-align: center;
-}
+
+  .searchBox {
+    position: absolute;
+    margin-top: 5%;
+    width: 93%;
+    height: 65%;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+  }
+
+  .searchButton {
+    top: 32px;
+  }
+
   .main_quote {
     object-fit: contain;
     height: 55%;
     width: 102%;
   }
-
+  
 }
 @media screen and (max-width: 600px) {
   .searchContainer {
