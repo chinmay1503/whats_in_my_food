@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import "./dashboard.css";
-import data from "./data/GeoChart.world.geo.json";
 import GeoChart from './GeoChart';
 export default class CalorieWorld extends Component {
   constructor(props){

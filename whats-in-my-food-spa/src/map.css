@@ -1,7 +1,15 @@
 * {
     font-family: 'Source Sans Pro', sans-serif;
   }
-  
+  svg .country:hover{
+    stroke:black;
+    stroke-width: 1px;
+    cursor: pointer;
+  }
+  img,svg{
+    width:500%;
+    height: 1000px;
+  }
   body {
     margin: 0;
     background: #ecf0f1;
