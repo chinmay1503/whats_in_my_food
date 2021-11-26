@@ -6,8 +6,9 @@
     stroke-width: 1px;
     cursor: pointer;
   }
+ 
   img,svg{
-    width:500%;
+    width:1000%;
     height: 1000px;
   }
   body {

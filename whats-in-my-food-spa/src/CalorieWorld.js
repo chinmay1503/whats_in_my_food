@@ -15,11 +15,10 @@ export default class CalorieWorld extends Component {
                 <body>
                 <div id="nav">
                 <h2>Calorie<sub>cal</sub> Dashboard</h2>
-                <p>
-                  Explore Calorie<sub>ca</sub> consumed by year.
-                </p>
+                <h2>
+                  Explore Calorie<sub>ca</sub> consumed throughout the globe in the year 2013.
+                </h2>
             
-                <p>Click on a country to see its trends by year.</p>
                 </div>
                 </body>
               <GeoChart/>
