@@ -4,6 +4,7 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
+import './css/browseStyles.css'
 import FoodProductApi from "./services/FoodProductApi";
 
 class Browse extends Component {

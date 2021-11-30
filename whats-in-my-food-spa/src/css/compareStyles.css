@@ -12,6 +12,7 @@
   margin-left: 49%;
   width: 100px;
   margin-top: 3%;
+  font-size: 1.5em;
 }
 
 .compareContainer {
@@ -46,24 +47,6 @@
 .compareLink {
   display:inline-block;
   width: 100%;
-}
-
-a {
-  font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 30px;
-  text-decoration: none;
-}
-
-a:hover {
-  border-bottom: none;
-}
-
-a:active {
-  border-bottom: none;
-}
-
-a:focus {
-  border-bottom: none;
 }
 
 .photoContainer {

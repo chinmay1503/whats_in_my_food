@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./dashboard.css";
+import "./css/dashboard.css";
 import GeoChart from './GeoChart';
 export default class CalorieWorld extends Component {
  
@@ -13,7 +13,7 @@ export default class CalorieWorld extends Component {
                 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
                 </head>
                 <body>
-                <div id="nav">
+                <div id="mapNav">
                 <h2>Calorie<sub>cal</sub> Dashboard</h2>
                 <h2>
                   Explore Calorie<sub>ca</sub> consumed throughout the globe in the year 2013.

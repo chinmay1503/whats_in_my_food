@@ -1,6 +1,6 @@
 import React,{useRef,useEffect,useState} from 'react'
 import { select,geoPath,geoMercator ,min,max,scaleLinear} from 'd3'
-import './map.css'
+import './css/map.css'
 const Map = ({data}) => {
     const svgRef = useRef();
     const wrapperRef = useRef();
@@ -50,8 +50,8 @@ const Map = ({data}) => {
     },[data,country])
   
     return (
-      <div ref={wrapperRef} style={{ marginBottom: "2rem" }}>
-        <svg style={{marginLeft:"18%",marginTop:"6%"}} ref={svgRef}></svg>
+      <div className="mapDiv" ref={wrapperRef}>
+        <svg className = "svgClass" ref={svgRef}></svg>
       </div>
     );
   }
