@@ -32,11 +32,17 @@ const Map = ({data}) => {
         .on("mousemove touchmove",(d)=>{
           tooltip
             .style("opacity",1)
-            .style("left","525px")
-            .style("top","800px")
+            .style("right","100px")
+            .style("top","400px")
+            .style("width","200px")
+            .style("height","300px")
+            .style("textalign","center")
             .html(`
-            <p>Country: ${d.properties.sovereignt}</p>
-            <p>Calorie (Kcal):${d.properties.calorie}</p>
+            
+            <p style="text-align:center;font-size:30px;">Country: ${d.properties.sovereignt}</p>
+            <br>
+            <p style="text-align:center;font-size:30px;">Calorie (Kcal):${d.properties.calorie}</p>
+            
          `)
         })
         .on('mouseout',(d)=>{
