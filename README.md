@@ -12,7 +12,7 @@ The What's in my Food was our final project in the course "410P/510 – Front En
 Thus, we aimed to design a simple minimilistic calorie statistics application which can help a person to understand their food and eating habits better and promote a healthy lifestyle`
 
 ## Home Page
-
+<img width="959" alt="image" src="https://user-images.githubusercontent.com/36131683/144179626-eb71c72c-7f8c-48df-8fd4-9af30af8343a.png">
 
 ## Features
 
