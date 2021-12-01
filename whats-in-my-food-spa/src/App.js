@@ -88,7 +88,7 @@ class Main extends Component {
                     <li className = {this.state.homeClass} ><NavLink  onClick = {this.handleNavClick} exact to= "/">Home</NavLink></li>
                 </ul> 
             </div>
-            <button className="burger" onClick = {this.handleNav}>
+            <button className="burger" aria-label="burgerButton" onClick = {this.handleNav}>
                 <div className={this.state.burgerLine1}></div>
                 <div className={this.state.burgerLine2}></div>
                 <div className={this.state.burgerLine3}></div>

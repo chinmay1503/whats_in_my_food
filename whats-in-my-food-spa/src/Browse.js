@@ -38,7 +38,6 @@ class Browse extends Component {
         });
       },
       (error) => {
-        console.log(error)
         this.setState({
           isLoaded: true,
           error: error,
@@ -90,7 +89,7 @@ class Browse extends Component {
       height: "10vw",
       width: "10vw",
     };
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded } = this.state;
     if (error) {
       return <div class="text-center errorMessage">Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -128,7 +127,7 @@ class Browse extends Component {
 
                     {Object.entries(this.state.items.data.products).map((item) => {
                       return (
-                        <NavLink to={`/product/${item[1].food_name}`} className = "shadow productBox">
+                        <NavLink to={`/product/${item[1].food_name}`} className = "shadow productBox" key={`${item[1].food_name}`}>
                           <div className = "productImageHolder">
                             <img className = "productSearchImage" alt = "food_product" src = {item[1].image_url}/>
                           </div>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { NavLink, HashRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "../src/css/productStyles.css";
 import "./css/compareStyles.css";
 import FoodProductApi from "./services/FoodProductApi";
 import ToastNotification from "./services/ToastNotification";
-import { ToastContainer, toast } from "material-react-toastify";
+import { ToastContainer } from "material-react-toastify";
 import "material-react-toastify/dist/ReactToastify.css";
 
 class Compare extends Component {

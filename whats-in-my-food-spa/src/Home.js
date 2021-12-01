@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import {
-    NavLink,
     HashRouter,
     
 } from "react-router-dom";
 import FoodProductApi from "./services/FoodProductApi";
 import ToastNotification from "./services/ToastNotification";
-import { ToastContainer, toast } from 'material-react-toastify';
+import { ToastContainer } from 'material-react-toastify';
 import 'material-react-toastify/dist/ReactToastify.css';
 
 class Home extends Component {
@@ -31,7 +30,6 @@ class Home extends Component {
               });
             },
             (error) => {
-              console.log(error)
               this.setState({
                 isLoaded: true,
                 error: error,
@@ -74,7 +72,6 @@ class Home extends Component {
                 ToastNotification.showErrorMessage("bottom-center", "Product Not present in Database, Please search for a different Product");
             }
             else if(this.isProductPresentInDb()){
-                console.log("Histroy object");
                 this.props.history.push(`/product/${this.state.searchTerm}`);
             }
 
