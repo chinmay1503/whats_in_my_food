@@ -10,6 +10,7 @@ import FoodProduct from "./FoodProduct";
 import Compare from "./Compare";
 import CompareFoodProduct from "./CompareFoodProduct";
 import CalorieWorld from "./CalorieWorld";
+
 class Main extends Component {
     constructor(props) {
         super(props);
