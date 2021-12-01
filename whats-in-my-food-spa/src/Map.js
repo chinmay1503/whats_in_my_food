@@ -35,12 +35,11 @@ const Map = ({data}) => {
             .style("right","400px")
             .style("top","400px")
             .style("width","200px")
-            .style("height","300px")
             .html(`
             
-            <p style="text-align:center;font-size:30px;">Country: ${d.properties.sovereignt}</p>
+            <p style="text-align:center;font-size:2rem;">Country: ${d.properties.sovereignt}</p>
             <br>
-            <p style="text-align:center;font-size:30px;">Avg Calorie Consumed/day (Kcal):${d.properties.calorie}</p>
+            <p style="text-align:center;font-size:2rem;">Avg Calorie Consumed/day (Kcal):${d.properties.calorie}</p>
             
          `)
         })
