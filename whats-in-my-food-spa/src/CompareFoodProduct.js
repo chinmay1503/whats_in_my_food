@@ -33,10 +33,10 @@ class CompareFoodProduct extends Component {
   )).start();
     var product1 = this.props.match.params.product1;
     var product2 = this.props.match.params.product2;
-    this.getProduct1Details(product1)
-    this.getProduct2Details(product2)
     this.fetchProductStats(product1, "product1")
     this.fetchProductStats(product2, "product2")
+    this.getProduct1Details(product1)
+    this.getProduct2Details(product2)
   }
 
   fetchProductStats = (prodName, inputName) => {

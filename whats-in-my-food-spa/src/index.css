@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@300&display=swap");
+
 body {
   background-color: #A2D1E0 !important;
-  /* background-color: rgba(179, 179, 179, 0.562); */
 }
 
 /*This is the animation function for text menu elements*/
@@ -114,6 +114,11 @@ h1 {
 .background {
   opacity: 0;
   width: 0px;
+}
+
+.Toastify__toast-body {
+  font-family: 'Arvo', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
 }
 
 /*If the screen is smaller than 600 px it switches to small mode*/
