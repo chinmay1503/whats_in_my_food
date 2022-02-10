@@ -49,7 +49,6 @@ class FoodProduct extends Component {
   getProductDetails = (prodName) => {
     FoodProductApi.get(`/api/searchProductByName/${prodName}`).then(
       (result) => {
-        console.log("Result",result);
         if (result.data && result.data.data && result.data.data.products) {
           let product = result.data.data.products[0];
           this.setState({

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {NavLink} from "react-router-dom";
 import { Animated, Easing } from 'react-native';
 import CalorieNinjaApi from "./services/CalorieNinjaApi";
 import FoodProductApi from "./services/FoodProductApi";
@@ -33,10 +32,10 @@ class CompareFoodProduct extends Component {
   )).start();
     var product1 = this.props.match.params.product1;
     var product2 = this.props.match.params.product2;
-    this.getProduct1Details(product1)
-    this.getProduct2Details(product2)
     this.fetchProductStats(product1, "product1")
     this.fetchProductStats(product2, "product2")
+    this.getProduct1Details(product1)
+    this.getProduct2Details(product2)
   }
 
   fetchProductStats = (prodName, inputName) => {
@@ -120,7 +119,7 @@ class CompareFoodProduct extends Component {
     }
     const { error, isLoaded, items } = this.state;
     if (error) {
-      return <div class = "text-center errorMessage">Error: {error.message}</div>;
+      return <div className = "text-center errorMessage">Error: {error.message}</div>;
     } else if (!isLoaded) {
       return (
         <div>
@@ -134,12 +133,11 @@ class CompareFoodProduct extends Component {
     } else {
       if (items) 
       {
-        if (Array.isArray(items) && items.length == 2 && items[0]["product1"] && items[1]["product2"])
+        if (Array.isArray(items) && items.length === 2 && items[0]["product1"] && items[1]["product2"])
         {
           let product1 = items[0]["product1"];
           let product2 = items[1]["product2"];
 
-          
           return (
             <div className="contentContainer">
               <div className="productContainer">
@@ -155,7 +153,7 @@ class CompareFoodProduct extends Component {
                       />
                     </div>
                   </div>
-                  <h3 className="versus compare">V/S</h3>
+                  <p className="versus compare">V/S</p>
                   <div className="product2Container">
                     <h1 className="text-center">{this.state.product2_Name}</h1>
                     <div className="compare photoHolder">
@@ -227,7 +225,7 @@ class CompareFoodProduct extends Component {
             </div>
           );
         } else {
-          return <div class = "text-center errorMessage">Error: No Such Food Product Found</div>;
+          return <div className = "text-center errorMessage">Error: No Such Food Product Found</div>;
         }
       }
      

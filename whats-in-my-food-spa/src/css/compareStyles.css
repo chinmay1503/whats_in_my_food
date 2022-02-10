@@ -13,6 +13,7 @@
   width: 100px;
   margin-top: 3%;
   font-size: 1.5em;
+  font-family: "Saira Extra Condensed", sans-serif;
 }
 
 .compareContainer {
@@ -79,23 +80,23 @@
 
 .comparison-bar1 {
   width: var(--bar-value);
-  background-color: #F2726F;
+  background-color: #ff7a77;
   color: rgb(0, 0, 0);
   animation-name: expandBar;
   animation-duration: 1s;
   border-radius: 5px;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: "Arvo", sans-serif;
 }
 
 .comparison-bar2 {
   width: var(--bar-value);
-  background-color: #5D62B5;
+  background-color: #9195d0;
   color: rgb(0, 0, 0);
   animation-name: expandBar;
   animation-duration: 1s;
   border-radius: 8px;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: "Arvo", sans-serif;
 }
 
